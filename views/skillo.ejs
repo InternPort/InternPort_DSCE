@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <!-- This Page shows the added skill by student by updating each time-->
+  <head>
+    <meta charset="utf-8">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+ <link rel="apple-touch-icon" sizes="180x180" href="https://images.shiksha.com/mediadata/images/1570797731phpmvsqFA.png">
+ <link rel="icon" type="image/png" sizes="32x32" href="https://images.shiksha.com/mediadata/images/1570797731phpmvsqFA.png">
+ <link rel="icon" type="image/png" sizes="16x16" href="https://images.shiks
+   ha.com/mediadata/images/1570797731phpmvsqFA.png">
+    <title>Add new Internships for teachers</title>
+    <style type="text/css">
+    body{
+        background-image: url(https://assets.justinmind.com/wp-content/uploads/2017/11/parallax-scrolling-parallax-effect-parallax-websites-header.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    </style>
+  </head>
+  <body>
+    <div>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href=" ">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTANru68lv_RvwoCGrK0-Pl4eusfAr94G2V1Lk2tiIcWyYqoPp_" style="display:inline-block; width:15%"/>
+      <span style="display:inline-block">InternPort DSCE </span>
+      </a>
+       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#lists" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="lists">
+      <ul  class="navbar-nav ml-auto" >
+      
+      <li class="nav-item">
+       <a class="nav-link" href="/homeStudent/<%= usns %>">Go Back to home Page </a>
+      </li>
+      
+      </ul>
+      </div>
+      </nav>
+    </div>
+
+    <form class="" action="/profile/skillset/<%= usns %>" method="post">
+      <div class="card bg-danger text-white">
+          <div class="card-body">
+            <label for="usr">Add Skill:  <input type="text" name="skill" class="form-control"> </label>
+          <div class="card-text ">
+            <label for="usr">How Do You Rate Your Skill ?</label>
+            <div >
+              <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" class="custom-control-input" id="customRadio1" name="types" value="Beginner">
+                <label class="custom-control-label" for="customRadio1">Beginner</label>
+              </div>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" class="custom-control-input" id="customRadio2" name="types" value="Intermediate">
+                <label class="custom-control-label" for="customRadio2">Intermediate</label>
+              </div>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" class="custom-control-input" id="customRadio3" name="types" value="Advanced">
+                <label class="custom-control-label" for="customRadio3">Advanced</label>
+              </div>
+            </div>
+          </div>
+        </div>
+          <button type="SUBMIT" class="btn btn-success ">+</button>
+        </div>
+        <br>
+  
+  </form>
+    <% if (skills.length===0) { %>
+      <div class="alert alert-danger alert-dismissible fade show">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <strong>You have Not Added Any Skills Yet</strong> 
+        </div>
+ <% }%>
+      <% for(let i=0;i<skills.length;i++){ %>
+
+        <div class="container">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    
+                    <div class="card text-black">
+                      <div class="card-header  bg-info">Skill</div>
+                      <div class="card-body">
+                        <div class="card-text"><%= skills[i].skill %></div>
+                        <div class="card-text"><%= skills[i].type %></div>
+                      </div>
+                       
+                      </div>
+                      <br>
+                </li>
+            </ul>
+    
+    </div>
+
+     <% } %>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+  </html>

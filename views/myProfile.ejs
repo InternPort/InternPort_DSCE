@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!--This Page Is For The details of  Added Internship by the student-->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="footer, address, phone, icons" />
+	
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+	<link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="https://images.shiksha.com/mediadata/images/1570797731phpmvsqFA.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://images.shiksha.com/mediadata/images/1570797731phpmvsqFA.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://images.shiksha.com/mediadata/images/1570797731phpmvsqFA.png">
+    <title>InternPort/Student Details</title>
+    <style type="text/css">
+    body{
+      background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRXhiJ4DG7wH_8WXDoQaOIeeVmsgFrt9kpibX_Om4MX1YJyzTsB&usqp=CAU");
+      background-repeat: no-repeat;
+      background-size: cover;
+      
+    }
+    </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href=" ">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTANru68lv_RvwoCGrK0-Pl4eusfAr94G2V1Lk2tiIcWyYqoPp_" style="display:inline-block; width:15%"/>
+            <span style="display:inline-block">InternPort DSCE </span>
+            </a>
+            </nav>
+        </div>
+        <div class="container">
+        <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">USN: <%= studDet.usn %></h4>
+              <h5 class="card-title" style="color:maroon; font-weight: bolder;">Details</h5>
+              <p class="card-text"><span style="color: purple; font-weight: bold;">Name of the Student: </span> <%= studDet.name %></p>
+              
+              <p class="card-text"><span style="color: purple; font-weight: bold;">Semester and Section :</span> <%= studDet.semester %> "<%= studDet.section %>"</p>
+              <p class="card-text"><span style="color: purple; font-weight: bold;">Student email id: </span> <%= studDet.email %></p>
+            
+                  <p class="card-text"><span style="color: purple; font-weight: bold;">Student Contact Number: </span> <%= studDet.contc %></p>
+                  <p class="card-text"><span style="color: purple; font-weight: bold;">CGPA : </span> <%= studDet.cgpa %></p> 
+            </div>
+          </div>
+        </div>
+          <div class="jumbotron bg-success">
+              <h4>Student Skills:</h4>
+            <% if (skills.length===0) { %>
+                <div class="alert alert-danger alert-dismissible fade show">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>No Skills Added</strong> 
+                  </div>
+           <% }%>
+                <% for(let i=0;i<skills.length;i++){ %>
+          
+                  <div class="container">
+                      <ol class="list-group">
+                          <li class="list-group-item">
+                              
+                              <div class="card text-black">
+                                <div class="card-header  bg-info">Student Skills</div>
+                                <div class="card-body">
+                                  <div class="card-text">Name of The Skill: <%= skills[i].skill %></div>
+                                  <div class="card-text">Grade : <%= skills[i].type %></div>
+                                </div>
+                                 
+                                </div>
+                                <br>
+                          </li>
+                        </ol>
+              </div>
+          
+               <% } %>
+          </div>
+          <div class="jumbotron bg-danger">
+            <h4 >Internship Attended:</h4>
+            <% if (internss.length===0) { %>
+                <div class="alert alert-danger alert-dismissible fade show">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>No Internships added </strong> 
+                  </div>
+           <% }%>
+           
+            <% for(let i=0;i<internss.length;i++){ %>
+                <div class="container">
+                <div class="card">
+                  <div class="card-body">
+                  
+                    <p class="card-text"><label style="color:darkviolet"> Internship Id:</label><%= internss[i].internid %></p>
+                    <p class="card-text"><label style="color:darkviolet">Your Internship Name:</label><%= internss[i].internname %></p>
+                    <p class="card-text"><label style="color:darkviolet">Document You Have Uploaded here:</label><%= internss[i].docUp %></p>
+                    <br/>
+                    <a href="/image/<%= internss[i].filenames %>" class="btn btn-primary stretched-link">Click To See The File Uploaded</a>
+                   
+                  </div>
+                </div>
+              </div>
+             <% } %>
+          
+            
+          </div>
+         <!-- jquery and other tags-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+   </body>
+  </html>

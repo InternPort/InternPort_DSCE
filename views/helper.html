@@ -1,0 +1,15 @@
+<% for(let i=0;i<interns.length;i++){ %>
+    <div class="container">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Internship Added</h4>
+        <p class="card-text"><label style="color:darkviolet"> Internship Id:</label><%= interns[i].internid %></p>
+        <p class="card-text"><label style="color:darkviolet">Your Internship Name:</label><%= interns[i].internname %></p>
+        <p class="card-text"><label style="color:darkviolet">Document You Have Uploaded here:</label><%= interns[i].docUp %></p>
+        <br/>
+        <button><a href="/delete/<%= usern %>">Delete InternShip</a></button>
+       
+      </div>
+    </div>
+  </div>
+ <% } %>

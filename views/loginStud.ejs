@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--First Time Login Of Students-->
+    <head><title>Login</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width ,initial-scale=1">
+        <link href="" type="text/css">
+        <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        body,html{
+            background-image: url("https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-011.jpg");
+                background-repeat: no-repeat;
+               background-size: cover;
+        }
+        h2{
+            text-shadow: 2px 2px 5px rgb(236, 203, 203);
+               font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+               font-weight:bolder;
+               font-size: 60px;
+               margin-top: 80px;
+               text-align: center;
+        }
+           .container{
+               padding: 50px;
+               color: white;
+           }
+           #log{
+               -webkit-box-shadow: -5px 2px 62px 8px rgba(0, 0, 0, 0.75);
+               -moz-box-shadow: -5px 2px 62px 8px rgba(0,0,0,0.75);
+               box-shadow: -5px 2px 62px 8px rgba(0,0,0,0.75);
+           }
+           .form-group{
+             font-size: 25px;
+             margin-top: 100px;
+           }
+           .buttons{
+               margin-left: 90px;
+           }
+           .label{
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+               font-weight: bolder;
+           }
+        </style>
+        <script type="text/JavaScript">
+            function check()
+            {
+                var usn=document.getElementById("username").value;
+                if(usn=="")
+                {
+                    alert("USN cannot be empty")
+                    return false;
+                }
+                if(usn.search(/^1DS\d{2}CS\d{3}$/)>=0)
+                    return true;
+                else{
+                alert("USN not in proper format");
+                return false;
+                }
+            }
+            </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-4  col-xs-12"></div>
+                    <div class="col-md-4 col-sm-4  col-xs-12">
+                <form action="/loginstu/<%= univ %>" id="log" method="POST">
+                    <h2>Welcome Student</h2>
+                <div class="form-group">
+                    <i class="material-icons">&#xe7fd;</i>
+                <label for="username">UserName:</label>
+                <input type="text" placeholder="Enter UserName" class="form-control" id="username"  name="usern" value="<%= usn %>" disabled></input>
+                <i style="font-size:24px" class="fa">&#xf023;</i>
+                    <label for="password">Password:</label>
+                <input type="password" placeholder="Enter password"  name="passwo" class="form-control" required></input>
+               <br/>
+            <div class="submit">
+                    <button name="Submit" type="submit" class="btn btn-success btn-block">Login</button></div>
+                <br/>
+                <div class="buttons">
+                    <button class="btn btn-danger">Forgot Password?</button>
+                </div>
+            </form>
+                    </div>
+                        <div class="col-md-4 col-sm-4  col-xs-12"></div>
+            </div>
+            </div>
+    </body>
+</html>
+

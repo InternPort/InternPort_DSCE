@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--This Page Is Where Students See the Internships Posted by Teachers -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="footer, address, phone, icons" />
+	
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+	<link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="https://images.shiksha.com/mediadata/images/1570797731phpmvsqFA.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://images.shiksha.com/mediadata/images/1570797731phpmvsqFA.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://images.shiks
+    ha.com/mediadata/images/1570797731phpmvsqFA.png">
+    <title>InternPort/Apply For Internships</title>
+    </head>
+    <style type="text/css">
+    body{
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-image: url("https://mlzuulaq3rjg.i.optimole.com/IMT6eQ-jDlRFo68/w:640/h:480/q:auto/rt:fill/g:ce/https://www.priyasinghi.com/wp-content/uploads/2019/09/un-web-mockup-4.jpg");
+    }
+    </style>
+    <body>
+     
+        <div>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href=" ">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTANru68lv_RvwoCGrK0-Pl4eusfAr94G2V1Lk2tiIcWyYqoPp_" style="display:inline-block; width:15%"/>
+            <span style="display:inline-block; color: white;
+            text-shadow: 2px 2px 4px #000000">InternPort DSCE </span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#lists" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="lists">
+            <ul  class="navbar-nav ml-auto" >
+            
+            <li class="nav-item">
+             <a class="nav-link" href="/homeStudent/<%= usn %>">Go Back to home Page </a>
+            </li>
+            
+            </ul>
+            </div>
+            </nav>
+            </div>
+              
+                <div>
+                    <% for(let i=0;i<skills.length;i++){ %>
+                
+                        <div class="container">
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <div class="card">
+                                        <div class="card-header bg-info">
+                                         <%= skills[i].internid %>
+                                        </div>
+                                        <div class="card-body bg-light ">
+                                           
+                                          <a href="/applied/<%= skills[i].internid %>/<%= usn %>" class="btn btn-primary">Apply For This Internship</a>
+                                          <a href="/internshi/<%= skills[i].internid %>/<%= usn %>" class="btn btn-primary">See the InternShip Details</a>
+
+                                        </div>
+                                      </div>
+                                </li>
+                            </ul>
+                    
+                    </div>
+                
+                     <% } %>
+                
+         <!-- jquery and other tags-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+   </body>
+  </html>

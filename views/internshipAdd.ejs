@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <!--Student Internship Adding Page(their Details)-->
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="https://images.shiksha.com/mediadata/images/1570797731phpmvsqFA.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://images.shiksha.com/mediadata/images/1570797731phpmvsqFA.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://images.shiksha.com/mediadata/images/1570797731phpmvsqFA.png">
+
+    <title>InternPort DSCE</title>
+
+    <style type="text/css">
+        body{
+            background-image: url("https://images.pexels.com/photos/743986/pexels-photo-743986.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        </style>
+  </head>
+  <body>
+    <div>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href=" ">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTANru68lv_RvwoCGrK0-Pl4eusfAr94G2V1Lk2tiIcWyYqoPp_" style="display:inline-block; width:15%"/>
+      <span style="display:inline-block">InternPort DSCE </span>
+      </a>
+       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#lists" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="lists">
+      <ul  class="navbar-nav ml-auto" >
+      
+      <li class="nav-item">
+       <a class="nav-link" href="/homeStudent/<%= usns %>">Go Back to home Page </a>
+      </li>
+      
+      </ul>
+      </div>
+      </nav>
+    </div>
+
+      <div class="container">
+        <form class="" action="/uploaded/<%= usns %>" method="post" enctype="multipart/form-data">
+            <div class="card bg-danger text-white">
+                <div class="card-body">
+                  <div>
+                    <p>1.You Can Add the Details of the Internships You have Attended . Need Not Add the Internship Id for that.</p>
+                    <p>2.You must Specify the internship id For the Internships you have been selected over here</p>
+                    <p>3.You must specify what you are adding as proof e.g.Call-letter,Certificate etc.,</p>
+                    <p>4.Please Makesure to upload documents in pdf format only</p>
+                  </div>
+                    <label for="usr">Internid: <input type="text" name="interid" class="form-control"> </label>
+                    <br/>
+                    <label for="usr">Internship Name: <input type="text" name="intername" class="form-control"> </label>
+                    <br/>
+                    <label for="usr">Document To be Uploaded <input type="text" name="interDoc" class="form-control"> </label>
+                    <br/>
+                    <div class="custom-file mb-3">
+                      <input type="file" class="custom-file-input form-control" name="file" id="file1" onchange="readSingleFile(this.files)">
+                      <label class="custom-file-label" for="file1" id="file-label">Choose file</label>
+                  </div>
+              </div>
+                <button type="submit" value="Submit" class="btn btn-success ">Add now</button>
+              </div>
+              <br>
+        
+        </form>
+          </div>
+          <!-- Optional JavaScript -->
+          <script>
+              function readSingleFile(e) {
+                  const name = e[0].name;
+                  document.getElementById("file-label").textContent = name;
+              }
+          </script>
+
+        <% for(let i=0;i<interns.length;i++){ %>
+          <div class="container">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Internship Added</h4>
+              <p class="card-text"><label style="color:darkviolet"> Internship Id:</label><%= interns[i].internid %></p>
+              <p class="card-text"><label style="color:darkviolet">Your Internship Name:</label><%= interns[i].internname %></p>
+              <p class="card-text"><label style="color:darkviolet">Document You Have Uploaded here:</label><%= interns[i].docUp %></p>
+              <br/>
+              <a href="/image/<%= interns[i].filenames %>" class="btn btn-primary stretched-link">Click To See The File Uploaded</a>
+             
+            </div>
+          </div>
+        </div>
+       <% } %>
+  
+  
+     
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+   
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

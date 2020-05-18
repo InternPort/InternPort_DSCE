@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<!--The Signup page-->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+	<title>Sign up InternPort</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="https://images.shiksha.com/mediadata/images/1570797731phpmvsqFA.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://images.shiksha.com/mediadata/images/1570797731phpmvsqFA.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://images.shiksha.com/mediadata/images/1570797731phpmvsqFA.png">
+  
+
+
+		
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+	<style  type="text/css">
+	body{
+  background-image:url("https://letsziv.com/wp-content/uploads/2017/10/Blue-background-of-Scraps-KC-Website-designed-by-ZIV-on-a-laptop.jpg");
+  background-size: cover;
+  background-repeat:no-repeat;
+ 
+}
+div{
+  display:block;
+
+  text-align: center;
+}
+
+.log{
+  padding: 60px 80px;
+  margin-top: 40px;
+  box-shadow: -5px 2px 62px 8px rgba(0,0,0,0.75);
+
+}
+label{
+  color:red;
+  font-weight: bolder;
+  font-size:20px;
+}
+i{
+color:red;
+}
+button{
+font-size:20px;
+}
+
+</style>
+
+<script type="text/javascript"  >
+var desgn;
+
+
+function check()
+	{
+
+		desgn=document.getElementById("desgn").value;
+		var dom=document.getElementById("desgn");
+
+switch(desgn)
+{
+	case "Teacher":
+	return true;
+	break;
+	case "teacher":
+	return true;
+	break;
+	case "Student":
+	return true;
+	break;
+	case "student":
+	return true;
+	break;
+	default:
+	alert("Value of Designation is neither Teacher nor Student \n please enter properly");
+  dom.value=null;
+
+	return false;
+
+}
+  }
+	function checkifSt(){
+		desgn=document.getElementById("desgn").value;
+		var usnid=document.getElementById("uname").value;
+		var dom=document.getElementById("uname");
+
+		switch(desgn)
+		{
+			case "Student":
+			if(usnid.search(/^1DS\d{2}CS\d{3}$/)>=0)
+
+			return true;
+			else{
+				alert("USN not in proper format");
+        dom.value=null;
+				return false;
+			}
+			break;
+			case "student":
+			if(usnid.search(/^1DS\d{2}CS\d{3}$/)>=0)
+
+			return true;
+			else{
+				alert("USN not in proper format");
+      dom.value=null;
+				return false;
+
+		}
+			break;
+			default:
+			return true;
+		}
+
+	}
+	function checkpass()
+	{
+	var fir=document.getElementById("passw").value;
+	var sec=document.getElementById("cpassw").value;
+	var dom=document.getElementById("passw");
+  var dom1 = document.getElementById("cpassw");
+	if(fir!=sec)
+	{
+	alert("Passwords Do not match");
+	dom.value=null;
+  dom1.value=null;
+  dom.focus();
+  dom.select();
+	return false;
+	}
+
+	return true;
+
+	}
+	function confirmemail()
+	{
+	var fir=document.getElementById("email").value;
+	var sec=document.getElementById("cemail").value;
+	var dom=document.getElementById("email");
+    var dom1 = document.getElementById("cemail");
+	if(fir!=sec)
+	{
+	alert("Email Do not match");
+dom.value=null;
+dom1.value=null;
+
+dom.focus();
+dom.select();
+	return false;
+	}
+
+	return true;
+
+	}
+
+
+  </script>
+  </head>
+   <body>
+	<div>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href=" ">
+		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTANru68lv_RvwoCGrK0-Pl4eusfAr94G2V1Lk2tiIcWyYqoPp_" style="display:inline-block; width:15%"/>
+		<span style="display:inline-block">InternPort DSCE </span>
+		</a>
+		 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#lists" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="lists">
+		<ul  class="navbar-nav ml-auto" >
+	  
+		<li class="nav-item">
+	   <a class="nav-link" href="/"> Home </a>
+		</li>
+		
+		</ul>
+	  </div>
+		</nav>
+	</div>
+    <div class="container-fluid ">
+		<div class="row">
+		  <div class=" col-xl-2 col-lg-2 col-md-2 col-sm-4 col-xs-4"></div>
+        <div class=" col-xl-2 col-lg-2 col-md-2 col-sm-4 col-xs-4"></div>
+		<form class="signup  log was-validated" action="/signup" method="POST" id="log"  >
+			<h2 style="color:red;" >Signup to InternPort</h2>
+			<br/>
+			<br/>
+		<div class="form-group">
+      <i class="fa fa-user icon"></i>
+      <label > Select Designation:</label>
+        <input type="text" class="form-control" placeholder="Teacher or Student" id="desgn" onblur="check()" name="desgn"  required>
+      </div>
+		<div class="form-group">
+		<i class="fa fa-user icon"></i>
+		 <label for="uname">Username:</label>
+            <input type="text" class="form-control" placeholder="USN or faculty Name" id="uname" name="uname" onblur="checkifSt()" required>
+		</div>
+		<div class="form-group">
+		<i class="fa  fa-key icon"> </i>
+		<label for="pwd">Password:</label>
+          <input type="password" class="form-control" placeholder="password" name="passw" id="passw"   required>
+		</div>
+		<div class="form-group">
+		<i class="fa  fa-key icon"> </i>
+		<label for="pwd"> Confirm Password:</label>
+          <input type="password" class="form-control" placeholder=" confirm password" name="cpassw" id="cpassw" onblur="checkpass()"   required>
+		</div>
+		<div class="form-group">
+		 <i class="fa  fa-envelope icon" ></i>
+		<label class="control-label" for="email">Email:</label>
+		 <div class="input-group">
+			<div class="input-group-addon">
+			<span class="glyphicon glyphicon-envelope"></span>
+		</div>
+		<input class="form-control" id="email" name="email" type="email" placeholder="enter your Email"  />
+		</div>
+		</div>
+		<div class="form-group">
+		 <i class="fa  fa-envelope icon" ></i>
+		<label class="control-label" for="email"> Confirm Email:</label>
+		 <div class="input-group">
+			<div class="input-group-addon">
+			<span class="glyphicon glyphicon-envelope"></span>
+		</div>
+		<input class="form-control" id="cemail"  name="cemail" type="email" placeholder="confirm your Email" onchange="confirmemail()"  />
+		</div>
+		</div>
+
+
+			<button type="submit" class="btn btn-primary mb-2">Submit</button>
+
+		</form>
+
+		</div>
+      </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  </body>
+</html>

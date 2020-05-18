@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+   
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="footer, address, phone, icons" />
+    
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  
+    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://images.shiksha.com/mediadata/images/1570797731phpmvsqFA.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://images.shiksha.com/mediadata/images/1570797731phpmvsqFA.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://images.shiksha.com/mediadata/images/1570797731phpmvsqFA.png">
+  </head>
+  <body>
+    <center><img src="https://images.shiksha.com/mediadata/images/1570797731phpmvsqFA.png" class="rounded" alt="DSCE Image"></center>
+      <h4>Hi Dear Student,</h4>
+      <h4>Greetings From InternPort DSCE,
+      </h4>
+        <h3>This Is To Inform You That you are Shortlisted by One Of our Teachers <span style="color: crimson;"><%= name %></span> At Our Portal.
+           </h3>
+            <p>We are glad that you made it happend .This happend beacuse of the Skills and the Experience that You have 
+              in your domain of interest. Hope You suceed in your work. </p>
+              <h3>The Details of the Internship are here as follows:</h3>
+              <div class="jumbotron" style="background-color: dimgrey;">
+                    <label ><span style="color:chocolate;font-weight:bolder">Internship id: </span><%= interninfo.internid %></label>
+                   <br/> <label><span style="color:chocolate;font-weight:bolder">Internship name: </span><%= interninfo.internname %></label><br/>
+                    <label><span style="color:chocolate;font-weight:bolder">Company providing the Internship: </span><%= interninfo.company %></label><br/>
+                    <label><span style="color:chocolate;font-weight:bolder">Your Daily work duration: </span> <%= interninfo.DailyWorkdur %></label><br/>
+                    <label><span style="color:chocolate;font-weight:bolder">Location: </span><%= interninfo.typofwork %></label><br/>
+                    <label><span style="color:chocolate;font-weight:bolder">Stifund: </span><%= interninfo.stifund %></label><br/>
+                    <label><span style="color:chocolate;font-weight:bolder">Skills required: </span><%= interninfo.Skills %></label><br/>
+              </div>
+              <div>
+                For futher details You can mail to the Above email id: <%= email %>
+                <br/>
+                Wishing you all the best,
+                <br/>
+                InternPort DSCE.
+              </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
